@@ -7,5 +7,6 @@ export const CATEGORIES: Category = Object.freeze({
 });
 
 export const CONTENT = {
+    SITE_NAME: 'Gifts for Programmers',
     AFFILIATE_LINK: 'This is an affiliate link and we may earn money if you purchase this item'
 }

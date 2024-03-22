@@ -6,16 +6,17 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SessionProvider } from "next-auth/react";
 import { auth } from '@/lib/auth';
+import { CONTENT } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Hip-Hop Shop",
-    template: "%s | Hip-Hop Shop"
+    default: CONTENT.SITE_NAME,
+    template: `%s | ${CONTENT.SITE_NAME}`
   },
-  keywords: ['Hip-Hop products', 'Rap merchandise'],
-  description: "A curated collection of all the newest hip-hop related products",
+  keywords: ['Web developer products', 'Programmer merchandise'],
+  description: "A curated collection of products for the programmer in your life",
 };
 
 export default async function RootLayout({
