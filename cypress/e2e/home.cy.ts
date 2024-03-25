@@ -9,9 +9,9 @@ describe('Home Page', () => {
       cy.location("pathname").should("eq", "/");
     });
 
-    it('should contain a link to navigate to the Crib category', () => {
-      cy.contains('Crib').click();
-      cy.url().should('include', '/crib');
+    it('should contain a link to navigate to the Clothing category', () => {
+      cy.contains('Clothing').click();
+      cy.url().should('include', '/clothing');
     });
 
     it('should contain a link to navigate to the Tech category', () => {
@@ -19,9 +19,9 @@ describe('Home Page', () => {
       cy.url().should('include', '/tech');
     });
 
-    it('should contain a link to navigate to the Threads category', () => {
-      cy.contains('Threads').click();
-      cy.url().should('include', '/threads');
+    it('should contain a link to navigate to the Household category', () => {
+      cy.contains('Household').click();
+      cy.url().should('include', '/household');
     });
   });
 
@@ -47,9 +47,9 @@ describe('Home Page', () => {
       cy.get('[data-test="post-card"]')
         .eq(0)
         .within(() => {
-          cy.contains('Crib').click();
+          cy.contains('Clothing').click();
 
-          cy.location('pathname').should("eq", "/crib");
+          cy.location('pathname').should("eq", "/clothing");
         })
     });
 
