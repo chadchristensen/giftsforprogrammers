@@ -1,32 +1,32 @@
 describe('Category Page', () => {
-    describe('Crib Category Page', () => {
+    describe('Clothing Category Page', () => {
         beforeEach(() => {
-            cy.visit('/crib');
+            cy.visit('/clothing');
         });
 
         it('should include a page title with the category name', () => {
-            cy.get('h1').contains('Crib');
+            cy.get('h1').contains('Clothing');
         });
 
-        it('should only include posts with the category of Crib', () => {
+        it('should only include posts with the category of Clothing', () => {
             cy.get('[data-test="post-card"]').each((elem) => {
-                cy.wrap(elem).contains('Crib')
+                cy.wrap(elem).contains('Clothing')
             });
         });
     });
 
-    describe('Threads Category Page', () => {
+    describe('Household Category Page', () => {
         beforeEach(() => {
-            cy.visit('/threads');
+            cy.visit('/household');
         });
 
         it('should include a page title with the category name', () => {
-            cy.get('h1').contains('Threads');
+            cy.get('h1').contains('Household');
         });
 
-        it('should only include posts with the category of Threads', () => {
+        it('should only include posts with the category of Household', () => {
             cy.get('[data-test="post-card"]').each((elem) => {
-                cy.wrap(elem).contains('Threads')
+                cy.wrap(elem).contains('Household')
             });
         });
     });

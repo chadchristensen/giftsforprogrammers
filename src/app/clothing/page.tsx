@@ -2,9 +2,9 @@ import CategoryPage from "@/components/CategoryPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Threads'
+    title: 'Clothing'
 }
 
-export default function ThreadsPage() {
-    return (<CategoryPage category="Threads" />)
+export default function ClothingPage() {
+    return (<CategoryPage category="Clothing" />)
 }
