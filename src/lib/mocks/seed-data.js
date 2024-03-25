@@ -25,7 +25,8 @@ const posts = [
         publishDate: '2024-12-11',
         isAffiliateLink: false,
         callToActionText: 'Buy from carus',
-        callToActionLink: 'https://striking-ground.net/'
+        callToActionLink: 'https://striking-ground.net/',
+        updated_at: null
     },
     {
         title: 'deludo adfectus perferendis',
@@ -39,7 +40,8 @@ const posts = [
         publishDate: '2023-11-23',
         isAffiliateLink: false,
         callToActionText: 'Buy from tracto',
-        callToActionLink: 'https://immediate-toaster.info/'
+        callToActionLink: 'https://immediate-toaster.info/',
+        updated_at: '2024-02-14'
     },
     {
         title: 'complectus venio attonbitus',
@@ -70,7 +72,8 @@ const posts = [
         publishDate: '2024-09-30',
         isAffiliateLink: true,
         callToActionText: 'Buy from quae',
-        callToActionLink: 'https://leafy-porter.biz/'
+        callToActionLink: 'https://leafy-porter.biz/',
+        updated_at: null
     },
     {
         title: 'volutabrum autem cursim',
@@ -83,7 +86,8 @@ const posts = [
         publishDate: '2023-10-22',
         isAffiliateLink: true,
         callToActionText: 'Buy from compono',
-        callToActionLink: 'https://informal-bayou.info'
+        callToActionLink: 'https://informal-bayou.info',
+        updated_at: '2024-01-20'
     },
     {
         title: 'vere corrumpo alias',
@@ -98,7 +102,8 @@ const posts = [
         publishDate: '2024-08-01',
         isAffiliateLink: false,
         callToActionText: 'Buy from valens',
-        callToActionLink: 'https://austere-permit.net'
+        callToActionLink: 'https://austere-permit.net',
+        updated_at: null
     },
     {
         title: 'cubicularis celo tracto',
@@ -113,7 +118,8 @@ const posts = [
         publishDate: null,
         isAffiliateLink: false,
         callToActionText: 'Buy from adaugeo',
-        callToActionLink: 'https://far-off-slime.org'
+        callToActionLink: 'https://far-off-slime.org',
+        updated_at: null
     },
     {
         title: 'pecus vergo demo',
@@ -127,7 +133,8 @@ const posts = [
         publishDate: '2024-01-09',
         isAffiliateLink: false,
         callToActionText: 'Buy from creo',
-        callToActionLink: 'https://foolish-gender.org/'
+        callToActionLink: 'https://foolish-gender.org/',
+        updated_at: '2024-03-20'
     },
     {
         title: 'aeternus talio enim',
@@ -142,7 +149,8 @@ const posts = [
         publishDate: null,
         isAffiliateLink: true,
         callToActionText: 'Buy from ipsa',
-        callToActionLink: 'https://miserable-basket.net/'
+        callToActionLink: 'https://miserable-basket.net/',
+        updated_at: null
     },
     {
         title: 'quaerat vere cognatus',
@@ -157,7 +165,8 @@ const posts = [
         publishDate: null,
         isAffiliateLink: true,
         callToActionText: 'Buy from qui',
-        callToActionLink: 'https://sophisticated-pumpernickel.info'
+        callToActionLink: 'https://sophisticated-pumpernickel.info',
+        updated_at: null
     },
     {
         title: 'veritatis animi cunae',
@@ -171,7 +180,8 @@ const posts = [
         publishDate: '2024-11-25',
         isAffiliateLink: false,
         callToActionText: 'Buy from cernuus',
-        callToActionLink: 'https://fatal-condition.com/'
+        callToActionLink: 'https://fatal-condition.com/',
+        updated_at: null
     },
     {
         title: 'eligendi incidunt urbs',
@@ -187,7 +197,8 @@ const posts = [
         publishDate: null,
         isAffiliateLink: true,
         callToActionText: 'Buy from sublime',
-        callToActionLink: 'https://smooth-yard.net'
+        callToActionLink: 'https://smooth-yard.net',
+        updated_at: null
     },
     {
         title: 'dolorum aggero depopulo',
@@ -201,7 +212,8 @@ const posts = [
         publishDate: '2023-06-17',
         isAffiliateLink: true,
         callToActionText: 'Buy from numquam',
-        callToActionLink: 'https://shrill-checkbook.org/'
+        callToActionLink: 'https://shrill-checkbook.org/',
+        updated_at: null
     },
     {
         title: 'beatus repellat quasi',
@@ -215,7 +227,8 @@ const posts = [
         publishDate: '2024-12-24',
         isAffiliateLink: false,
         callToActionText: 'Buy from comis',
-        callToActionLink: 'https://idle-puggle.net'
+        callToActionLink: 'https://idle-puggle.net',
+        updated_at: null
     },
     {
         title: 'celo adversus curatio',
@@ -228,7 +241,8 @@ const posts = [
         publishDate: '2024-03-26',
         isAffiliateLink: true,
         callToActionText: 'Buy from angelus',
-        callToActionLink: 'https://hideous-calm.info'
+        callToActionLink: 'https://hideous-calm.info',
+        updated_at: null
     },
     {
         title: 'bellum vereor degero',
@@ -241,7 +255,8 @@ const posts = [
         publishDate: '2025-02-22',
         isAffiliateLink: false,
         callToActionText: 'Buy from atqui',
-        callToActionLink: 'https://acrobatic-metal.info'
+        callToActionLink: 'https://acrobatic-metal.info',
+        updated_at: null
     },
     {
         title: 'victoria thymum tibi',
@@ -255,7 +270,8 @@ const posts = [
         publishDate: '2023-07-30',
         isAffiliateLink: true,
         callToActionText: 'Buy from utrum',
-        callToActionLink: 'https://whispered-remnant.biz'
+        callToActionLink: 'https://whispered-remnant.biz',
+        updated_at: null
     },
     {
         title: 'aro tero altus',
@@ -270,7 +286,8 @@ const posts = [
         publishDate: '2023-08-24',
         isAffiliateLink: true,
         callToActionText: 'Buy from trucido',
-        callToActionLink: 'https://cooperative-trumpet.info'
+        callToActionLink: 'https://cooperative-trumpet.info',
+        updated_at: '2024-01-01'
     },
     {
         title: 'venio arbor sequi',
@@ -285,7 +302,8 @@ const posts = [
         publishDate: '2023-11-17',
         isAffiliateLink: true,
         callToActionText: 'Buy from thesis',
-        callToActionLink: 'https://puzzled-land.name/'
+        callToActionLink: 'https://puzzled-land.name/',
+        updated_at: null
     },
     {
         title: 'curvo abstergo tabella',
@@ -301,7 +319,8 @@ const posts = [
         publishDate: '2024-01-22',
         isAffiliateLink: false,
         callToActionText: 'Buy from conduco',
-        callToActionLink: 'https://golden-conflict.org/'
+        callToActionLink: 'https://golden-conflict.org/',
+        updated_at: null
     }
 ]
 

@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const postFormSchema = z.object({
-    id: z.union([z.string().uuid().optional(), z.literal("")]),
     title: z.string().trim().min(3),
     slug: z.string().toLowerCase().trim().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     categoryId: z.union([z.enum([

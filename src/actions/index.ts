@@ -1,6 +1,6 @@
 "use server"
 
-import { sql } from '@vercel/postgres';
+import sql from '@/lib/db';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { auth, signOut as logOut } from '@/lib/auth';
@@ -55,7 +55,6 @@ export async function createPost(
         } = transformedParsedData;
 
         try {
-            // TODO: Add created_at and updated_at fields
             await sql`
                 INSERT INTO posts (title, slug, category_id, description, image_src, image_alt_text, publish_date, is_affiliate_link, cta_text, cta_link)
                 VALUES (${title}, ${slug}, ${category_id}, ${description}, ${image_src}, ${image_alt_text}, ${publish_date}, ${is_affiliate_link}, ${cta_text}, ${cta_link})
@@ -100,7 +99,6 @@ export async function editPost(
             publishDate: parsed.data.publishDate || null
         }
         const {
-            id,
             title,
             slug,
             description,
@@ -117,7 +115,7 @@ export async function editPost(
             await sql`
                 UPDATE posts
                 SET title = ${title}, slug = ${slug}, category_id = ${category_id}, description = ${description}, image_src = ${image_src}, image_alt_text = ${image_alt_text}, publish_date = ${publish_date}, is_affiliate_link = ${is_affiliate_link}, cta_text = ${cta_text}, cta_link = ${cta_link}, updated_at = NOW()
-                WHERE id = ${id}
+                WHERE slug = ${slug}
             `;
         } catch {
             return { message: 'Database Error: Failed to edit Post.' };
@@ -152,6 +150,7 @@ export async function deletePost(slug: string) {
     }
 
     console.log(`Deleted post with slug ${slug} successfully`);
+    // TODO: Answer these questions
     // ? Do I need to revalidate path here
     // ? Do I need to revalidate home path as well
     revalidatePath('/admin/posts');

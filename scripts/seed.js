@@ -1,12 +1,12 @@
-import { db } from '@vercel/postgres';
+import sql from '../src/lib/db.js';
 import { categories, posts } from '../src/lib/mocks/seed-data.js';
 
-async function seedCategories(client) {
+async function seedCategories() {
     try {
         // ? What is EXTENSION?
-        await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+        await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
         // Create the "categories" table if it doesn't exist
-        const createTable = await client.sql`
+        const createTable = await sql`
         CREATE TABLE IF NOT EXISTS categories (
           id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
           name VARCHAR(80) NOT NULL
@@ -18,7 +18,7 @@ async function seedCategories(client) {
         // Insert data into the "categories" table
         const insertedCategories = await Promise.all(
             categories.map(async (category) => {
-                return client.sql`
+                return sql`
           INSERT INTO categories (id, name)
           VALUES (${category.id}, ${category.name})
           ON CONFLICT (id) DO NOTHING;
@@ -38,12 +38,12 @@ async function seedCategories(client) {
     }
 }
 
-async function seedPosts(client) {
+async function seedPosts() {
     try {
         // ? What is EXTENSION?
-        await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+        await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
         // Create the "posts" table if it doesn't exist
-        const createTable = await client.sql`
+        const createTable = await sql`
         CREATE TABLE IF NOT EXISTS posts (
           id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
           title VARCHAR(255) NOT NULL,
@@ -56,7 +56,7 @@ async function seedPosts(client) {
           is_affiliate_link BOOLEAN DEFAULT FALSE,
           cta_text VARCHAR(120),
           cta_link TEXT,
-          created_at TIMESTAMP DEFAULT NOW()
+          created_at TIMESTAMP DEFAULT NOW(),
           updated_at TIMESTAMP
         );
       `;
@@ -66,9 +66,9 @@ async function seedPosts(client) {
         // Insert data into the "posts" table
         const insertedPosts = await Promise.all(
             posts.map(async (post) => {
-                return client.sql`
-          INSERT INTO posts (title, slug, category_id, description, image_src, image_alt_text, publish_date, is_affiliate_link, cta_text, cta_link)
-          VALUES (${post.title}, ${post.slug}, ${post.categoryId}, ${post.description}, ${post.imageSrc}, ${post.imageAltText}, ${post.publishDate}, ${post.isAffiliateLink}, ${post.callToActionText}, ${post.callToActionLink})
+                return sql`
+          INSERT INTO posts (title, slug, category_id, description, image_src, image_alt_text, publish_date, is_affiliate_link, cta_text, cta_link, updated_at)
+          VALUES (${post.title}, ${post.slug}, ${post.categoryId}, ${post.description}, ${post.imageSrc}, ${post.imageAltText}, ${post.publishDate}, ${post.isAffiliateLink}, ${post.callToActionText}, ${post.callToActionLink}, ${post.updated_at})
           ON CONFLICT (id) DO NOTHING;
         `;
             }),
@@ -87,12 +87,8 @@ async function seedPosts(client) {
 }
 
 async function main() {
-    const client = await db.connect();
-
-    await seedCategories(client);
-    await seedPosts(client);
-
-    await client.end();
+    await seedCategories();
+    await seedPosts();
 }
 
 main().catch((err) => {

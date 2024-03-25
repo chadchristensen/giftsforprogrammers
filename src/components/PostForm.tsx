@@ -37,7 +37,6 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
     const form = useForm<z.infer<typeof postFormSchema>>({
         resolver: zodResolver(postFormSchema),
         defaultValues: {
-            id: post?.id ?? '',
             title: post?.title ?? '',
             slug: post?.slug ?? '',
             categoryId: (post?.category && CATEGORIES[post?.category]) ?? '',
@@ -69,17 +68,6 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-4"
             >
-                <FormField
-                    control={form.control}
-                    name="id"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <Input type="hidden" {...field} />
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
                 <FormField
                     control={form.control}
                     name="title"
