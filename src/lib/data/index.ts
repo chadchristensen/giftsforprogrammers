@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import sql from '@/lib/db';
 import { PostQueryResult } from '@/lib/definitions';
 
 // * This is where you will call SQL commands directly to the database to fetch data
@@ -6,7 +6,7 @@ import { PostQueryResult } from '@/lib/definitions';
 
 export const fetchPublishedPostBySlug = async (slug: string) => {
     try {
-        const data = await sql<PostQueryResult>`
+        const data = await sql<PostQueryResult[]>`
             SELECT 
                 posts.title,
                 posts.slug,
@@ -24,7 +24,7 @@ export const fetchPublishedPostBySlug = async (slug: string) => {
             LIMIT 1;
         `;
 
-        return data.rows[0];
+        return data[0];
     } catch (error) {
         console.error('Database Error: ', error);
         throw new Error(`Failed to fetch post with the slug ${slug}.`);
@@ -33,7 +33,7 @@ export const fetchPublishedPostBySlug = async (slug: string) => {
 
 export const fetchPostBySlug = async (slug: string) => {
     try {
-        const data = await sql<PostQueryResult>`
+        const data = await sql<PostQueryResult[]>`
             SELECT 
                 posts.id,
                 posts.title,
@@ -52,7 +52,7 @@ export const fetchPostBySlug = async (slug: string) => {
             LIMIT 1;
         `;
 
-        return data.rows[0];
+        return data[0];
     } catch (error) {
         console.error('Database Error: ', error);
         throw new Error(`Failed to fetch post with the slug ${slug}.`);
@@ -63,7 +63,7 @@ export const fetchPublishedPostsByCategory = async (category: string) => {
     try {
         const categoryName = category.toLowerCase();
         // TODO: Might be more performant to switch the WHERE clause cases around
-        const data = await sql`
+        const data = await sql<PostQueryResult[]>`
             SELECT 
                 posts.title,
                 posts.slug,
@@ -81,7 +81,7 @@ export const fetchPublishedPostsByCategory = async (category: string) => {
             ORDER BY posts.publish_date DESC;
         `;
 
-        return data.rows;
+        return data;
     } catch (error) {
         console.error('Database Error: ', error);
         throw new Error(`Failed to fetch posts for category ${category}.`);
@@ -90,7 +90,7 @@ export const fetchPublishedPostsByCategory = async (category: string) => {
 
 export const fetchPublishedPosts = async () => {
     try {
-        const data = await sql`
+        const data = await sql<PostQueryResult[]>`
             SELECT 
                 posts.title,
                 posts.slug,
@@ -108,7 +108,7 @@ export const fetchPublishedPosts = async () => {
             ORDER BY posts.publish_date DESC;
         `;
 
-        return data.rows;
+        return data;
     } catch (error) {
         console.error('Database Error: ', error);
         throw new Error('Failed to fetch published posts.');
@@ -117,7 +117,7 @@ export const fetchPublishedPosts = async () => {
 
 export const fetchPosts = async () => {
     try {
-        const data = await sql<PostQueryResult>`
+        const data = await sql<PostQueryResult[]>`
             SELECT 
                 posts.title,
                 posts.slug,
@@ -134,7 +134,7 @@ export const fetchPosts = async () => {
             ORDER BY posts.publish_date DESC;
         `;
 
-        return data.rows;
+        return data;
     } catch (error) {
         console.error('Database Error: ', error);
         throw new Error('Failed to fetch posts.');
