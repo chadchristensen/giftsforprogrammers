@@ -40,8 +40,8 @@ export default function PostCard({
             <CardHeader className="gap-2">
                 <Image
                     src={imageSrc}
-                    width={500}
-                    height={500}
+                    width={482}
+                    height={362}
                     alt={imageAltText}
                 />
                 <CardTitle><Link className="hover:underline" href={`/posts/${slug}`}>{title}</Link></CardTitle>

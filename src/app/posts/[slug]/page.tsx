@@ -49,15 +49,17 @@ export default async function SinglePostPage({ params }: Props) {
 
     return (
         <>
-            <CategoryLabel category={category} />
-            <PageHeading>{title}</PageHeading>
+            <PageHeading className="text-left">{title}</PageHeading>
             <Image
+                className="mb-4"
                 src={image_src}
-                width={500}
-                height={500}
+                width={482}
+                height={362}
                 alt={image_alt_text}
                 priority
             />
+            <CategoryLabel category={category} />
+            <p className="leading-7 [&:not(:first-child)]:mt-6" data-test="post-description">{description}</p>
             {
                 is_affiliate_link ?
                     <div className="flex gap-1 items-center text-slate-700 my-2 text-sm">
@@ -66,7 +68,6 @@ export default async function SinglePostPage({ params }: Props) {
                     </div>
                     : null
             }
-            <p className="leading-7 [&:not(:first-child)]:mt-6" data-test="post-description">{description}</p>
             <Link className={cn(buttonVariants(), "mt-4 w-full sm:w-fit")} href={cta_link} data-test="call-to-action">{cta_text}</Link>
         </>
     )
