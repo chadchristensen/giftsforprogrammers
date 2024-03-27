@@ -1,7 +1,6 @@
 import PageHeading from "@/components/PageHeading";
 import { buttonVariants } from "@/components/ui/button";
 import Image from 'next/image'
-import Link from "next/link";
 import { notFound } from 'next/navigation';
 import { cn } from "@/lib/utils";
 import { fetchPublishedPostBySlug } from "@/lib/data";
@@ -68,7 +67,7 @@ export default async function SinglePostPage({ params }: Props) {
                     </div>
                     : null
             }
-            <Link className={cn(buttonVariants(), "mt-4 w-full sm:w-fit")} href={cta_link} data-test="call-to-action">{cta_text}</Link>
+            <a target="_blank" rel="noopener" className={cn(buttonVariants(), "mt-4 w-full sm:w-fit")} href={cta_link} data-test="call-to-action">{cta_text}</a>
         </>
     )
 }

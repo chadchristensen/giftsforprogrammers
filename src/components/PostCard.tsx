@@ -53,7 +53,7 @@ export default function PostCard({
             </CardContent>
             <CardFooter className="flex flex-1 items-end">
                 <Button asChild>
-                    <Link className="w-full" href={callToActionLink} data-test="post-card-call-to-action">{callToActionText}</Link>
+                    <a target="_blank" rel="noopener" className="w-full" href={callToActionLink} data-test="post-card-call-to-action">{callToActionText}</a>
                 </Button>
             </CardFooter>
         </Card >
