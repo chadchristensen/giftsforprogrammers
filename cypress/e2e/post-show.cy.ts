@@ -7,7 +7,7 @@ describe('Post Show Page', () => {
         it('should contain a category badge that links to the respective category page', () => {
             cy.get('[data-test="category-label"]').contains('Household').click();
 
-            cy.location('pathname').should("eq", "/household");
+            cy.location('pathname').should("eq", "/categories/household");
         });
 
         it('should contain an h1 title that matches the post title', () => {

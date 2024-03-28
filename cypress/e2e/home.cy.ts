@@ -11,17 +11,17 @@ describe('Home Page', () => {
 
     it('should contain a link to navigate to the Clothing category', () => {
       cy.contains('Clothing').click();
-      cy.url().should('include', '/clothing');
+      cy.url().should('include', '/categories/clothing');
     });
 
     it('should contain a link to navigate to the Tech category', () => {
       cy.contains('Tech').click();
-      cy.url().should('include', '/tech');
+      cy.url().should('include', '/categories/tech');
     });
 
     it('should contain a link to navigate to the Household category', () => {
       cy.contains('Household').click();
-      cy.url().should('include', '/household');
+      cy.url().should('include', '/categories/household');
     });
   });
 
@@ -49,7 +49,7 @@ describe('Home Page', () => {
         .within(() => {
           cy.contains('Clothing').click();
 
-          cy.location('pathname').should("eq", "/clothing");
+          cy.location('pathname').should("eq", "/categories/clothing");
         })
     });
 

@@ -15,13 +15,13 @@ export function MainNav({
             )}
             {...props}
         >
-            <NavLink href="/clothing">
+            <NavLink href="/categories/clothing">
                 Clothing
             </NavLink>
-            <NavLink href="/tech">
+            <NavLink href="/categories/tech">
                 Tech
             </NavLink>
-            <NavLink href="/household">
+            <NavLink href="/categories/household">
                 Household
             </NavLink>
         </nav>
