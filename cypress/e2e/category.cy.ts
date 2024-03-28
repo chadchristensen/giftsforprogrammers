@@ -1,7 +1,7 @@
 describe('Category Page', () => {
     describe('Clothing Category Page', () => {
         beforeEach(() => {
-            cy.visit('/clothing');
+            cy.visit('/categories/clothing');
         });
 
         it('should include a page title with the category name', () => {
@@ -17,7 +17,7 @@ describe('Category Page', () => {
 
     describe('Household Category Page', () => {
         beforeEach(() => {
-            cy.visit('/household');
+            cy.visit('/categories/household');
         });
 
         it('should include a page title with the category name', () => {
@@ -33,7 +33,7 @@ describe('Category Page', () => {
 
     describe('Tech Category Page', () => {
         beforeEach(() => {
-            cy.visit('/tech');
+            cy.visit('/categories/tech');
         });
 
         it('should include a page title with the category name', () => {
