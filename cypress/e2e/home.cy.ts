@@ -30,7 +30,7 @@ describe('Home Page', () => {
       cy.get('[data-test="post-card"]')
         .eq(0)
         .within(() => {
-          cy.get('img').should('have.attr', 'alt', 'eaque aeneus abscido');
+          cy.get('img').should('have.attr', 'alt', 'canto caecus suppono');
         })
     });
 
@@ -38,8 +38,8 @@ describe('Home Page', () => {
       cy.get('[data-test="post-card"]')
         .eq(0)
         .within(() => {
-          cy.contains('curvo abstergo tabella').click();
-          cy.location('pathname').should('eq', '/posts/curvo-abstergo-tabella');
+          cy.contains('celo adversus curatio').click();
+          cy.location('pathname').should('eq', '/posts/celo-adversus-curatio');
         })
     });
 
@@ -47,9 +47,9 @@ describe('Home Page', () => {
       cy.get('[data-test="post-card"]')
         .eq(0)
         .within(() => {
-          cy.contains('Clothing').click();
+          cy.contains('Tech').click();
 
-          cy.location('pathname').should("eq", "/categories/clothing");
+          cy.location('pathname').should("eq", "/categories/tech");
         })
     });
 

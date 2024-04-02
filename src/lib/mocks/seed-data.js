@@ -1,11 +1,11 @@
 const categories = [
     {
         id: 'ecce5674-ce1a-4508-bba0-79c3747ffa73',
-        name: 'Threads'
+        name: 'Household'
     },
     {
         id: '1d0d118b-db6c-42a5-bf67-3f1696f1e290',
-        name: 'Crib'
+        name: 'Clothing'
     },
     {
         id: '2cd9aec6-76d6-4307-90c8-cce1f74a2eda',
