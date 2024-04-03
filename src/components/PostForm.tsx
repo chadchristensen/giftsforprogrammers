@@ -75,7 +75,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Post Title</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="Title" {...field} />
+                                <Input type="text" placeholder="Bose QuietComfort Noise Cancelling Headphones" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -88,7 +88,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Post Slug</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="Slug" {...field} />
+                                <Input type="text" placeholder="bose-quietcomfort-noise-cancelling-headphones" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -114,7 +114,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Alt text for the image</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="A pair of socks with the Notorious B.I.G's face on them" {...field} />
+                                <Input type="text" placeholder="A pair of black Bose QuietComfort noise cancelling headphones" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -153,7 +153,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Description</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="A pair of socks with the Notorious B.I.G's face on them" {...field} />
+                                <Textarea {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -166,7 +166,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Call to Action Text</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="ex. Buy from Allpins" {...field} />
+                                <Input type="text" placeholder="ex. Buy from Amazon" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -179,7 +179,7 @@ export function PostForm({ post, onFormSubmit }: PostFormProps) {
                         <FormItem className="max-w-lg">
                             <FormLabel>Call to Action Link</FormLabel>
                             <FormControl>
-                                <Input type="text" placeholder="ex. https://allpins.com?ref=hiphopshop" {...field} />
+                                <Input type="text" placeholder="ex. https://amazon.com?ref=giftsforprogrammers" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
