@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SessionProvider } from "next-auth/react";
 import { auth } from '@/lib/auth';
 import { CONTENT } from "@/lib/constants";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + " flex flex-col h-lvh"}>
         <a
           className="transition left-0 bg-slate-50 text-primary-content absolute p-3 m-3 -translate-y-16 focus:translate-y-0"
           href="#main-content"
@@ -37,7 +38,8 @@ export default async function RootLayout({
         <SessionProvider session={session}>
           <Header />
           <div className="border-b"></div>
-          <main id="main-content" className="container mx-auto p-8 md:px-40">{children}</main>
+          <main id="main-content" className="container mx-auto p-8 md:px-40 flex-1">{children}</main>
+          <Footer />
         </SessionProvider>
         <Analytics />
         <SpeedInsights />

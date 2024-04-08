@@ -2,7 +2,7 @@ import NavLink from "@/components/NavLink";
 
 import { cn } from "@/lib/utils"
 
-// TODO: Move routes to CONSTANT file
+// TODO: Move routes to CONSTANT file or use helper function builder like in Udemy course
 export function MainNav({
     className,
     ...props
