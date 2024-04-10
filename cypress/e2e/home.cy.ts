@@ -73,4 +73,21 @@ describe('Home Page', () => {
 
   });
 
+  describe('Footer', () => {
+    it('should contain the "made by" text', () => {
+      cy.get('footer')
+        .within(() => {
+
+          cy.contains('Made with ❤️ and');
+          cy.contains('by chadthecoder');
+
+          cy.contains('a')
+            .should($a => {
+              expect($a).to.have.text('chadthecoder');
+              expect($a).to.have.attr('href', 'https://www.linkedin.com/in/chadthecoder/')
+            });
+        })
+    });
+  });
+
 })
