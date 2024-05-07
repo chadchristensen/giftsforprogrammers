@@ -1,8 +1,7 @@
 import NavLink from "@/components/NavLink";
+import { cn, generateCategoryNavLink } from "@/lib/utils"
+import { CATEGORIES } from "@/lib/constants";
 
-import { cn } from "@/lib/utils"
-
-// TODO: Move routes to CONSTANT file or use helper function builder like in Udemy course
 export function MainNav({
     className,
     ...props
@@ -10,20 +9,18 @@ export function MainNav({
     return (
         <nav
             className={cn(
-                "flex justify-center py-2",
+                "hidden md:flex justify-center py-2",
                 className
             )}
             {...props}
         >
-            <NavLink href="/categories/clothing">
-                Clothing
-            </NavLink>
-            <NavLink href="/categories/tech">
-                Tech
-            </NavLink>
-            <NavLink href="/categories/household">
-                Household
-            </NavLink>
+            {Object.keys(CATEGORIES).map((category) => {
+                return (
+                    <NavLink href={generateCategoryNavLink(category)} key={category}>
+                        {category}
+                    </NavLink>
+                )
+            })}
         </nav>
     )
 }

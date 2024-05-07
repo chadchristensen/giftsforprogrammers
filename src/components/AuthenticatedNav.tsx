@@ -15,12 +15,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { signOut } from '@/actions';
 
-export default async function AuthButton() {
+export default async function AuthButton({ className }: React.HTMLAttributes<HTMLElement>) {
     const session = await auth();
     if (session?.user) {
         return (
             <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild className={className}>
                     <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                         <Avatar className="h-8 w-8">
                             <AvatarImage src={session.user?.image ?? ""} alt={session.user?.name ?? ""} />
