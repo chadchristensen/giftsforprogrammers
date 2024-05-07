@@ -38,3 +38,7 @@ export function getIsUserAdmin(currentUserEmail: string | null | undefined) {
     return email === currentUserEmail;
   });
 }
+
+export function generateCategoryNavLink(category: string): string {
+  return `/categories/${category.toLowerCase()}`;
+}
