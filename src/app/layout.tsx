@@ -8,6 +8,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from '@/lib/auth';
 import { CONTENT } from "@/lib/constants";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,22 +29,42 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
-    <html lang="en">
-      <body className={inter.className + " flex flex-col h-lvh"}>
-        <a
-          className="transition left-0 bg-slate-50 text-primary-content absolute p-3 m-3 -translate-y-16 focus:translate-y-0"
-          href="#main-content"
-        >Skip Navigation
-        </a>
-        <SessionProvider session={session}>
-          <Header />
-          <div className="border-b"></div>
-          <main id="main-content" className="container mx-auto p-8 md:px-40 flex-1">{children}</main>
-          <Footer />
-        </SessionProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <>
+      <Script id='dark-mode'>
+        {
+          `if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+
+          // Whenever the user explicitly chooses light mode
+          localStorage.theme = 'light'
+
+          // Whenever the user explicitly chooses dark mode
+          localStorage.theme = 'dark'
+
+          // Whenever the user explicitly chooses to respect the OS preference
+          localStorage.removeItem('theme')`
+        }
+      </Script>
+      <html lang="en">
+        <body className={inter.className + " flex flex-col h-lvh bg-background"}>
+          <a
+            className="transition left-0 bg-slate-50 text-primary-content absolute p-3 m-3 -translate-y-16 focus:translate-y-0"
+            href="#main-content"
+          >Skip Navigation
+          </a>
+          <SessionProvider session={session}>
+            <Header />
+            <div className="border-b"></div>
+            <main id="main-content" className="container mx-auto p-8 md:px-40 flex-1">{children}</main>
+            <Footer />
+          </SessionProvider>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </>
   );
 }
