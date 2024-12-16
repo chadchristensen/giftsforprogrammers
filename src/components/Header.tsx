@@ -5,7 +5,7 @@ import MobileNav from "@/components/MobileNav";
 
 export default function Header() {
     return (
-        <header className="flex items-center justify-between container mx-auto md:px-40 py-2 md:py-0">
+        <header className="flex items-center justify-between container mx-auto md:px-40 px-4 py-2 pr-0 md:py-0">
             <Logo />
             <MainNav />
             <MobileNav />
