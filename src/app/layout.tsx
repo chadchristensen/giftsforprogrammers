@@ -58,7 +58,7 @@ export default async function RootLayout({
           <SessionProvider session={session}>
             <Header />
             <div className="border-b"></div>
-            <main id="main-content" className="container mx-auto p-8 md:px-40 flex-1">{children}</main>
+            <main id="main-content" className="container mx-auto px-4 py-8 md:px-40 flex-1">{children}</main>
             <Footer />
           </SessionProvider>
           <Analytics />

@@ -47,6 +47,6 @@ export default async function AuthButton({ className }: React.HTMLAttributes<HTM
             </DropdownMenu>
         )
     } else {
-        return <div className='w-8'></div>
+        return <div className='hidden md:block w-8'></div>
     }
 }
